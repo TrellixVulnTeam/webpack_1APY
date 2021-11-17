@@ -51,3 +51,42 @@ module.exports = {
         ],
     }
 }
+module.exports = {
+    // ...
+
+    module: {
+        rules: [
+            // изображения
+            {
+                test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+                type: 'asset/resource',
+            },
+        ],
+    },
+}
+module.exports = {
+    // ...
+
+    module: {
+        rules: [
+            // шрифты и SVG
+            {
+                test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+                type: 'asset/inline',
+            },
+        ],
+    },
+}
+module.exports = {
+    // ...
+
+    module: {
+        rules: [
+            // CSS, PostCSS, Sass
+            {
+                test: /\.(scss|css)$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+            },
+        ],
+    },
+}

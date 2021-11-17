@@ -15,3 +15,4 @@ heading.textContent = 'Как интересно!'
 // добавляем параграф и заголовок в DOM
 const root = document.querySelector('#root')
 root.append(heading, p)
+import './style/main.css'
