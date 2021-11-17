@@ -90,3 +90,21 @@ module.exports = {
         ],
     },
 }
+const webpack = require('webpack')
+
+module.exports = {
+    // ...
+    mode: 'development',
+    devServer: {
+        historyApiFallback: true,
+        open: true,
+        compress: true,
+        hot: true,
+        port: 8070,
+    },
+    plugins: [
+        // ...
+        // применять изменения только при горячей перезагрузке
+        new webpack.HotModuleReplacementPlugin(),
+    ],
+}
