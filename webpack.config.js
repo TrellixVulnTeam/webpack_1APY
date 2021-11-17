@@ -1,6 +1,7 @@
 //точка входа
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -16,7 +17,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
     },
-}
+};
 module.exports = {
     // ...
 
@@ -27,4 +28,26 @@ module.exports = {
             filename: 'index.html', // название выходного файла
         }),
     ],
+};
+module.exports = {
+    // ...
+
+    plugins: [
+        // ...
+        new CleanWebpackPlugin(),
+    ],
+};
+module.exports = {
+    // ...
+
+    module: {
+        rules: [
+            // JavaScript
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: ['babel-loader'],
+            },
+        ],
+    }
 }
